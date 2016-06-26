@@ -32,7 +32,8 @@ myApp.controller( 'petAdd', [ '$scope', '$http', function($scope, $http){
       name: $scope.nameIn,
       type: $scope.typeIn,
       age: $scope.ageIn,
-      img: $scope.urlIn
+      img: $scope.urlIn,
+      desc: $scope.descIn
     }
 
     $http({
@@ -44,6 +45,7 @@ myApp.controller( 'petAdd', [ '$scope', '$http', function($scope, $http){
     $scope.typeIn = '';
     $scope.ageIn = '';
     $scope.urlIn = '';
+    $scope.descIn = '';
   };
 
 
@@ -54,6 +56,7 @@ myApp.controller( 'viewChange', ['$scope', function($scope){
   // $scope.newView = "'" + "partials/animalTable.html" + "'";
 
   $scope.tabs = [
+    {url: 'partials/home.html'},
     {url: 'partials/animalTable.html'},
     {url: 'partials/animalAdd.html'}
   ];

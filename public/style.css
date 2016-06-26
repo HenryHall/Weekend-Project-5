@@ -1,6 +1,15 @@
-img {
+body {
+  background-color: #ff9980;
+}
+
+table img {
   height: 200px;
   width: 300px;
+}
+
+#bannerImg {
+  width: 100%;
+  height: auto;
 }
 
 header {
@@ -22,4 +31,33 @@ header button {
 
 header li {
   display: inline-block;
+}
+
+tr {
+  border: 2px solid black;
+}
+
+td {
+  padding-right: 10px;
+}
+
+td:last-child {
+  padding-right: 0px;
+}
+
+#descIn {
+  height: 125px;
+  width: 350px;
+}
+
+#content {
+  background-color: #d9d9d9;
+  margin: auto;
+  width: 75vw;
+  padding: 10px;
+}
+
+textarea {
+  resize:both;
+  overflow: auto;
 }

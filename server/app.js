@@ -10,7 +10,8 @@ var petSchema = new  mongoose.Schema({
   name: String,
   type: String,
   age: Number,
-  img: String
+  img: String,
+  desc: String
 });
 
 var animallist = mongoose.model( 'animallist', petSchema );
@@ -27,12 +28,13 @@ app.get( '/', function( req, res ){
 
 app.post('/addPets', function(req, res){
   console.log("Sending: " + req.body.name);
-  console.log("Image URL: " + req.body.img);
+  console.log("Pet Description: " + req.body.desc);
   var newAnimal = {
     name: req.body.name,
     type: req.body.type,
     age: req.body.age,
-    img: req.body.img
+    img: req.body.img,
+    desc: req.body.desc
   }
 
   var newRecord = animallist(newAnimal);
@@ -43,7 +45,6 @@ app.post('/addPets', function(req, res){
 app.get('/getPets', function(req, res){
   console.log("Grabbing pet info");
   animallist.find().then(function(data){
-    console.log("Sending: " + data);
     res.send(data);
   });
 });
