@@ -1,0 +1,8 @@
+<table ng-controller="petDisplay">
+  <tr ng-repeat="animals in animalRecords">
+    <td>{{ animals.name }}</td>
+    <td>{{ animals.type }}</td>
+    <td>{{ animals.age }}</td>
+    <td><img src="{{ animals.img }}"/></td>
+  </tr>
+</table>
