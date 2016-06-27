@@ -55,6 +55,7 @@ app.post('/addPets', function(req, res){
 app.get('/getPets', function(req, res){
   console.log("Grabbing pet info");
   animallist.find().then(function(data){
+    console.log(data);
     res.send(data);
   });
 });
