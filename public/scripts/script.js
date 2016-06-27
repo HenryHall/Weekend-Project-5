@@ -14,15 +14,28 @@ myApp.controller( 'petDisplay', ['$scope', '$http', function($scope, $http){
       url: "/getPets",
     }).then( function(animals){
         $scope.animalRecords = animals.data;
+        // console.log(animals.data[0]._id);
 
       });
   };
-populatePage();
+
+  populatePage();
+
+
+  $scope.adoptAnimal = function(animalId){
+    console.log("Sending " + animalId + " for adoption.");
+    var sendAnimal = {
+      id: animalId
+    };
+    $http({
+      method: "DELETE",
+      url: "/adoptAnimal",
+      data: sendAnimal,
+      headers: {'Content-Type': 'application/json;charset=utf-8'}
+    }).then(populatePage());
+  };
 
 }]);
-
-
-var animalPageData;
 
 myApp.controller( 'petAdd', [ '$scope', '$http', function($scope, $http){
 
@@ -53,7 +66,6 @@ myApp.controller( 'petAdd', [ '$scope', '$http', function($scope, $http){
 }]);
 
 myApp.controller( 'viewChange', ['$scope', function($scope){
-  // $scope.newView = "'" + "partials/animalTable.html" + "'";
 
   $scope.tabs = [
     {url: 'partials/home.html'},
@@ -72,5 +84,5 @@ myApp.controller( 'viewChange', ['$scope', function($scope){
 
 myApp.controller( 'petSearch', [ '$scope', '$http', function( $scope, $http ){
   // get user input on button click
-
+  //STUFF HERE
 }]);

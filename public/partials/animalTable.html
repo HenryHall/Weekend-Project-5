@@ -1,10 +1,14 @@
-<table ng-controller="petDisplay" id="content">
-  <tr ng-repeat="animals in animalRecords">
-    <td>Name: {{ animals.name }}</td>
-    <td>Type: {{ animals.type }}</td>
-    <td>Age: {{ animals.age }}</td>
-    <td>{{animals.desc}}</td>
-    <td><img src="{{ animals.img }}"/></td>
-    <td><button type="button" name="button">Adopt Today!</button></td>
-  </tr>
-</table>
+<div ng-controller="petDisplay" id="content">
+  <table ng-repeat="animals in animalRecords">
+    <tr>
+      <td class="animalName">{{ animals.name }}</td>
+      <td>Type: {{ animals.type }}</td>
+      <td>Age: {{ animals.age }}</td>
+      <td><button ng-click="adoptAnimal(animals._id)" id="adoptButton" type="button" name="button">Adopt Today!</button></td>
+      <td rowspan="2"><img class="animalImg" src="{{ animals.img }}"/></td>
+    </tr>
+    <tr>
+      <td colspan="4">{{animals.desc}}</td>
+    </tr>
+  </table>
+</div>

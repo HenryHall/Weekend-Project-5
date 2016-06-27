@@ -2,7 +2,7 @@ body {
   background-color: #ff9980;
 }
 
-table img {
+.animalImg {
   height: 200px;
   width: 300px;
 }
@@ -33,20 +33,31 @@ header li {
   display: inline-block;
 }
 
-tr {
-  border: 2px solid black;
+table {
+  /*border: 1px solid black;*/
+  margin: 5px;
+  margin-bottom: 15px;
+  padding: 20px;
+  background-color: #FFFFFF;
 }
 
 td {
   padding-right: 10px;
+  width: 20%;
 }
 
 td:last-child {
   padding-right: 0px;
 }
 
+input {
+  height: 2em;
+  width: 300px;
+  margin-bottom: 5px;
+}
+
 #descIn {
-  height: 125px;
+  height: 75px;
   width: 350px;
 }
 
@@ -55,6 +66,19 @@ td:last-child {
   margin: auto;
   width: 75vw;
   padding: 10px;
+}
+
+#adoptButton {
+  color: #ff0000;
+  font-size: 1.5em;
+  height: 75px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+.animalName {
+  color: #0066ff;
+  font-size: 2em;
 }
 
 textarea {

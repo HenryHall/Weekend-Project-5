@@ -26,6 +26,16 @@ app.get( '/', function( req, res ){
   res.sendFile( path.resolve( 'views/index.html' ) );
 });
 
+app.delete('/adoptAnimal', function(req, res){
+  animallist.findByIdAndRemove(req.body.id, function(err){
+    if(err){
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
 app.post('/addPets', function(req, res){
   console.log("Sending: " + req.body.name);
   console.log("Pet Description: " + req.body.desc);
