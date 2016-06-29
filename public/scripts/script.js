@@ -14,7 +14,6 @@ myApp.controller( 'petDisplay', ['$scope', '$http', function($scope, $http){
       url: "/getPets",
     }).then( function(animals){
         $scope.animalRecords = animals.data;
-        // console.log(animals.data[0]._id);
 
       });
   };

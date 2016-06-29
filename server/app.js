@@ -49,13 +49,12 @@ app.post('/addPets', function(req, res){
 
   var newRecord = animallist(newAnimal);
   newRecord.save();
-  res.send("Animal Created")
+  res.send("Animal Created");
 });
 
 app.get('/getPets', function(req, res){
   console.log("Grabbing pet info");
   animallist.find().then(function(data){
-    console.log(data);
     res.send(data);
   });
 });
